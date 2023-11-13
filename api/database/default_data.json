@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "alice@example.com",
+      "password": "alice"
+    },
+    {
+      "email": "bob@example.com",
+      "password": "bob"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Torres del Paine",
+      "description": "A stunning national park known for its soaring mountains, bright blue icebergs, and golden pampas filled with wildlife.",
+      "image_url": "images/pic_1.jpg"
+    },
+    {
+      "title": "Atacama Desert",
+      "description": "The driest desert in the world, home to breathtaking salt flats, hot springs, and otherworldly landscapes.",
+      "image_url": "images/pic_2.jpg"
+    },
+    {
+      "title": "Easter Island",
+      "description": "A remote volcanic island famed for its mysterious moai statues created by the early Rapa Nui people.",
+      "image_url": "images/pic_3.jpg"
+    },
+    {
+      "title": "Puerto Varas",
+      "description": "A charming town on the shores of Lake Llanquihue with stunning views of the Osorno and Calbuco volcanoes.",
+      "image_url": "images/pic_4.jpg"
+    }
+  ]
+}
