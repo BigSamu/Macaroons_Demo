@@ -10,11 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Macaroons Demo",
   description:
-    "A demo of macaroons, tokens with contextual caveats for decentralized authorization and delegation. Application introduce the use of first-party caveats built with NextJS and FastAPI frameworks", // You can update this as needed
+    "A demo application of macaroons tokens", // You can update this as needed
   icons: {
     icon: "/assets/favicon.ico",
   },
-  image: "/assets/macaroon_logo.png",
+  imageUrl: "/assets/macaroon_logo.png",
+  siteUrl: "https://macaroons-demo-starter.vercel.app",
 };
 
 export default function RootLayout({ children }) {
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://macaroons-demo-starter.vercel.app"
+        content={metadata.siteUrl}
       />
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
