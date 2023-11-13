@@ -1,4 +1,5 @@
 import secrets
+from typing import Optional
 
 from pathlib import Path
 from pydantic_settings import BaseSettings
@@ -10,22 +11,19 @@ class Settings(BaseSettings):
     API_URL_PREFIX: str
 
     # MACAROON SETINGS
-    MACAROON_SECRET_KEY: str = "secret"
+    MACAROON_SECRET_KEY: str
     # secrets.token_urlsafe(32)
 
-    # CSRF SETINGS
-    CSRF_SECRET_KEY: str = secrets.token_urlsafe(32)
-
     # DATABASE SETTINGS
-    POSTGRES_USER: str = None # Database User - Production
-    POSTGRES_PASSWORD: str = None # Database Password - Production
-    POSTGRES_HOST: str = None # Database Host - Production
-    POSTGRES_DATABASE: str = None # Database Name - Production
+    POSTGRES_USER: Optional[str] = None # Database User - Production
+    POSTGRES_PASSWORD: Optional[str] = None # Database Password - Production
+    POSTGRES_HOST: Optional[str] = None # Database Host - Production
+    POSTGRES_DATABASE: Optional[str] = None # Database Name - Production
 
-    SQLITE_URL: str = None # Database Location - Development
+    SQLITE_URL: Optional[str] = None # Database Location - Development
 
     # ENVIRONMENT SETTINGS
-    ENVIRONMENT: str = "development"  # Set this in your .env file
+    ENVIRONMENT: str
 
     class Config:
         env_file = ".env"
