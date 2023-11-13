@@ -14,6 +14,7 @@ export const metadata = {
   icons: {
     icon: "/assets/favicon.ico",
   },
+  image: "/assets/macaroon_logo.png",
 };
 
 export default function RootLayout({ children }) {
