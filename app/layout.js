@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Macaroons Demo",
   description:
-    "A demo of macaroon tokens using First-Party Caveats built with NextJS and FastAPI", // You can update this as needed
+    "A demo of macaroons, tokens with contextual caveats for decentralized authorization and delegation. Application introduce the use of first-party caveats built with NextJS and FastAPI frameworks", // You can update this as needed
   icons: {
     icon: "/assets/favicon.ico",
   },
