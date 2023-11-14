@@ -5,11 +5,16 @@
 <!-- *********************************************************************** -->
 
 [![Github Follow][github-follow-badge]][github-follow-url]
-[![LinkedIn Small][linkedin-badge-small]][linkedin-url]
-[![Hackerrank Small][hackerrank-badge-small]][linkedin-url]
+[![License][license-badge]][license-url]
+[![Forks][forks-badge]][forks-url]
+[![Stars][stars-badge]][stars-url]
+[![Watchers][watchers-badge]][watchers-url]
 [![Ask Me Anything][ama-badge]][ama-url]
 [![Say Thanks!][say-thanks-badge]][say-thanks-url]
 
+[![Gmail Small][gmail-badge-small]][gmail-url]
+[![LinkedIn Small][linkedin-badge-small]][linkedin-url]
+[![Hackerrank Small][hackerrank-badge-small]][linkedin-url]
 <!-- *********************************************************************** -->
 <!-- 0.3) PROJECT TITLE -->
 <!-- *********************************************************************** -->
@@ -20,17 +25,16 @@
 
 A demo of macaroon tokens, credentials with contextual caveats for decentralized authorization and delegation.
 
-[![License][license-badge]][license-url]
-[![Forks][forks-badge]][forks-url]
-[![Stars][stars-badge]][stars-url]
-[![Watchers][watchers-badge]][watchers-url]
+
+
+<!-- Demo available in following [link](#) -->
 
 ---
 
-<p align="center">
-  <img src="demos/demo_video_1.gif" alt="demo_video_1" width="75%"/>
-  <img src="demos/demo_video_2.gif" alt="demo_video_2" width="75%"/>
-  <img src="demos/demo_video_3.gif" alt="demo_video_3" width="75%"/>
+<p align="left">
+  <img src="public/demos/demo_video_1.gif" alt="demo_video_1" width="50%"/>
+  <img src="public/demos/demo_video_2.gif" alt="demo_video_2" width="50%"/>
+  <img src="public/demos/demo_video_3.gif" alt="demo_video_3" width="50%"/>
 </p
 
 <!-- *********************************************************************** -->
@@ -401,6 +405,7 @@ Developed with ❤️ in Chile 🇨🇱
 <!-- Gmail -->
 
 [gmail-badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-badge-small]:https://img.shields.io/badge/--gmail?label=Gmail&logo=Gmail&style=social
 [gmail-url]: mailto:valdesgutierrez@gmail.com
 
 <!-- Twitter -->
