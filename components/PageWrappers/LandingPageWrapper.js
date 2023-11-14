@@ -61,8 +61,8 @@ const LandingPageWrapper = (props) => {
             </h5>
           </Alert>
           <p className="mb-2">
-            {accessToken?.isShared
-              ? "Congratulations! You have unrestricted access to the following resources"
+            {!accessToken?.isShared
+              ? "Welcome! You have unrestricted access to the following resources"
               : "Hi there! You have a restricted access token. Select an option to check which resources you can access:"}
           </p>
           <ResourceForm
