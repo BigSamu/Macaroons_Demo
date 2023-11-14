@@ -32,9 +32,9 @@ A demo of macaroon tokens, credentials with contextual caveats for decentralized
 ---
 
 <p align="left">
-  <img src="public/demos/demo_video_1.gif" alt="demo_video_1" width="50%"/>
-  <img src="public/demos/demo_video_2.gif" alt="demo_video_2" width="50%"/>
-  <img src="public/demos/demo_video_3.gif" alt="demo_video_3" width="50%"/>
+  <img src="public/demos/demo_video_1.gif" alt="demo_video_1" width="75%"/>
+  <img src="public/demos/demo_video_2.gif" alt="demo_video_2" width="75%"/>
+  <img src="public/demos/demo_video_3.gif" alt="demo_video_3" width="75%"/>
 </p
 
 <!-- *********************************************************************** -->
