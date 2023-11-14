@@ -9,8 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Macaroons Demo",
-  description:
-    "A demo application of macaroons tokens", // You can update this as needed
+  description: "A demo application of macaroons tokens", // You can update this as needed
   icons: {
     icon: "/assets/favicon.ico",
   },
@@ -28,10 +27,7 @@ export default function RootLayout({ children }) {
       {/* Add other SEO relevant tags here */}
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta
-        property="og:url"
-        content={metadata.siteUrl}
-      />
+      <meta property="og:url" content={metadata.siteUrl} />
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
       <meta property="og:image" content={metadata.image} />
