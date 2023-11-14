@@ -15,7 +15,7 @@ export const metadata = {
     icon: "/assets/favicon.ico",
   },
   imageUrl: "/assets/macaroon_logo.png",
-  siteUrl: "https://macaroons-demo-starter.vercel.app",
+  siteUrl: "https://macaroons-demo.vercel.app",
 };
 
 export default function RootLayout({ children }) {
