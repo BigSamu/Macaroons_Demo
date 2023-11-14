@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Alert, Row, Col } from "react-bootstrap";
+import { Form, Button, Alert, Row, Col, Spinner } from "react-bootstrap";
 
 import { useResourceContext } from "../../contexts/ResourceContext";
 import { resourceService } from "../../services";
@@ -19,7 +19,12 @@ const ResourceForm = (props) => {
   const { resources, accessShared } = props;
 
   // Contexts
-  const { currentResource, setCurrentResource } = useResourceContext();
+  const {
+    currentResource,
+    setCurrentResource,
+    isLoadingResource,
+    setIsLoadingResource,
+  } = useResourceContext();
 
   // States
   const [selectedResource, setSelectedResource] = useState(currentResource);
@@ -38,6 +43,7 @@ const ResourceForm = (props) => {
   const handleOnSubmitLoadData = async (e) => {
     e.preventDefault();
     try {
+      setIsLoadingResource(true);
       let resourceToUpdate = !accessShared
         ? await resourceService.getOneById(selectedResource.id)
         : await resourceService.getOneSharedById(selectedResource.id);
@@ -64,6 +70,8 @@ const ResourceForm = (props) => {
           break;
       }
       setCurrentResource({});
+    } finally {
+      setIsLoadingResource(false);
     }
   };
 
@@ -104,6 +112,16 @@ const ResourceForm = (props) => {
             <Button variant="success" size="sm" className="mx-1" type="submit">
               Load Data
             </Button>
+            {isLoadingResource && (
+              <span className="ms-2">
+                <span>Loading...</span>
+                <Spinner
+                  animation="border"
+                  size="sm"
+                  className="ms-1"
+                />
+              </span>
+            )}
           </Col>
         </Form.Group>
       </Form>

@@ -18,7 +18,7 @@ const ResourceImage = (props) => {
   // ----------------------------------
 
   // Contexts
-  const { currentResource } = useResourceContext();
+  const { currentResource, isLoadingResource } = useResourceContext();
 
   //------------------------------------------
   // JSX

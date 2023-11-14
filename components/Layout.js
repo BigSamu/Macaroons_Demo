@@ -18,7 +18,7 @@ const Layout = (props) => {
   return (
     <div className="d-flex flex-column vh-100">
       <Header />
-      <Container className="flex-fill p-5 pb-3">{props.children}</Container>
+      <Container className="flex-fill p-5 pb-3" fluid="lg">{props.children}</Container>
       <Footer />
     </div>
   );

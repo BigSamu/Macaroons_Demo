@@ -6,10 +6,14 @@ const ResourceContext = createContext({});
 
 export const ResourceProvider = ({ children }) => {
   const [currentResource, setCurrentResource] = useState({});
+  const [isLoadingResource, setIsLoadingResource] = useState(false);
 
   const context = {
     currentResource,
     setCurrentResource,
+    isLoadingResource,
+    setIsLoadingResource
+
   };
 
   return (
