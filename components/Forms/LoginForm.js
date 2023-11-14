@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import { Form, Button, Row, Col, Alert } from "react-bootstrap";
+import { Form, Button, Row, Col, Alert, Spinner } from "react-bootstrap";
 import { ShieldLockFill, PersonCircle, Asterisk } from "react-bootstrap-icons";
 
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -21,7 +21,7 @@ const LoginForm = (props) => {
   });
 
   // Contexts
-  const { login, error } = useAuthContext();
+  const { login, error, isLoading } = useAuthContext();
 
   //------------------------------------------
   // HANDLERS & AUX FUNCTIONS
@@ -36,7 +36,7 @@ const LoginForm = (props) => {
 
   const handleOnSubmitLogIn = async (e) => {
     e.preventDefault();
-    
+
     login(credentials);
     if (error) {
       setCredentials({
@@ -102,13 +102,21 @@ const LoginForm = (props) => {
           </Col>
         </Form.Group>
 
-        <Button
-          className="mt-4 d-block mx-auto"
-          variant="primary"
-          type="submit"
-        >
-          Submit
-        </Button>
+        {!isLoading ? (
+          <Button
+            className="mt-4 d-block mx-auto"
+            variant="primary"
+            type="submit"
+          >
+            Submit
+          </Button>
+        ) : (
+          <Spinner
+            animation="border"
+            variant="primary"
+            className="mt-4 d-block mx-auto"
+          />
+        )}
       </Form>
     </div>
   );

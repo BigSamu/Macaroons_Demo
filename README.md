@@ -27,8 +27,6 @@ A demo of macaroon tokens, credentials with contextual caveats for decentralized
 
 Demo available in following [link](https://macaroons-demo.vercel.app/)
 
----
-
 <p align="left">
   <img src="public/demos/demo_video_1.gif" alt="demo_video_1" width="75%"/>
   <img src="public/demos/demo_video_2.gif" alt="demo_video_2" width="75%"/>

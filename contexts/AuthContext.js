@@ -9,6 +9,7 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Next.js 13 uses `useNavigation` for client-side navigation
@@ -25,12 +26,15 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
+      setIsLoading(true);
       let usernameToUpdate = await authService.login(credentials);
       setUser(usernameToUpdate);
       setError("");
       router.push("/");
     } catch (error) {
       setError("Invalid Credentials");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -43,6 +47,7 @@ export const AuthProvider = ({ children }) => {
   const context = {
     user,
     error,
+    isLoading,
     login,
     logout,
   };
