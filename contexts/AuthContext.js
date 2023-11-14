@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    authService.logout();
+    await authService.logout();
     setUser(null);
     router.push("/login"); // Using `navigate` from `useNavigation`
   };

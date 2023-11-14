@@ -34,7 +34,6 @@ const Header = (props) => {
 
   const handleOnClickLogout = (e) => {
     logout();
-    router.push("/login");
   };
 
   const handleOnClickHome = (e) => {
