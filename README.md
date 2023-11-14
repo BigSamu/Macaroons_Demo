@@ -25,9 +25,7 @@
 
 A demo of macaroon tokens, credentials with contextual caveats for decentralized authorization and delegation.
 
-
-
-<!-- Demo available in following [link](#) -->
+Demo available in following [link](https://macaroons-demo.vercel.app/)
 
 ---
 
