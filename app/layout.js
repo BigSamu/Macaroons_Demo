@@ -13,7 +13,7 @@ export const metadata = {
   icons: {
     icon: "/assets/favicon.ico",
   },
-  imageUrl: "/assets/macaroon_logo.png",
+  imagePath: "/assets/macaroon_logo.png",
   siteUrl: "https://macaroons-demo.vercel.app",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <meta property="og:url" content={metadata.siteUrl} />
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metadata.description} />
-      <meta property="og:image" content={metadata.image} />
+      <meta property="og:image" content={metadata.imagePath} />
 
       <body className={inter.className}>
         <AuthProvider>
