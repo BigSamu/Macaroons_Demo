@@ -24,7 +24,9 @@ const NotFoundPageWrapper = () => {
       <h5 className="mt-3">
         Go back to{" "}
         <span className="button btn-link">
-          <Link href="/"><a>Homepage</a></Link>
+          <Link href="/" passHref>
+            <a>Homepage</a>
+          </Link>
         </span>
       </h5>
     </div>
