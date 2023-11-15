@@ -41,9 +41,9 @@ def create_macaroon_access_token(
 ) -> str:
 
     root_macaroon = Macaroon(
-        location="www.sp.com",
-        identifier=str(identifier),
-        key=settings.MACAROON_SECRET_KEY,
+        location=settings.NEXT_PUBLIC_CLIENT_DOMAIN_URL_PRODUCTION, # url location
+        identifier=str(identifier), # user_id
+        key=settings.MACAROON_SECRET_KEY, # secret key
     )
     if caveats is not None:
         first_party_caveats: List = first_party_caveats_parser(caveats)
@@ -57,7 +57,7 @@ def create_macaroon_access_token(
 def verify_macaroon_access_token(
     access_token: Dict, credentials_exception: HTTPException
 ) -> str:
-  
+
     # Try to decode macaroon
     try:
         macaroon = Macaroon.deserialize(access_token["value"])

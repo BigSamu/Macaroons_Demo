@@ -7,6 +7,9 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
 
+    # DOMAIN SETTINGS
+    NEXT_PUBLIC_CLIENT_DOMAIN_URL_PRODUCTION: str
+
     # PATH SETTINGS
     API_URL_PREFIX: str
 
