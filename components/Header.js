@@ -1,8 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import {
+  useRouter,
+  usePathname,
+  useParams,
+  useSearchParams,
+} from "next/navigation";
 
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 import { useAuthContext } from "../contexts/AuthContext";
 
@@ -21,10 +26,13 @@ const Header = (props) => {
   // Routers and Pathnames
   const router = useRouter();
   const pathname = usePathname();
+  const { macaroon } = useParams();
+  const searchParams = useSearchParams();
 
   // Aux Variables
-  const inLoginPath = pathname === "/login" ? true : false;
-  const inSharedHomePath = pathname === "/share/[macaroon]" ? true : false;
+  const inSharedHomePath = pathname === `/share/${macaroon}` ? true : false;
+  const inSharedAboutPath =
+    pathname === `/share/about/${macaroon}` ? true : false;
   const inHomePath = pathname === "/" ? true : false;
   const inAboutPath = pathname === "/about" ? true : false;
 
@@ -38,6 +46,14 @@ const Header = (props) => {
 
   const handleOnClickHome = (e) => {
     router.push("/");
+  };
+
+  const handleOnClickHomeSharedPage = (e) => {
+    router.push(`/share/about/${macaroon}?email=${searchParams.get("email")}`);
+  };
+
+  const handleOnClickAboutSharedPage = (e) => {
+    router.push(`/share/${macaroon}?email=${searchParams.get("email")}`);
   };
 
   const handleOnClickAbout = (e) => {
@@ -74,6 +90,16 @@ const Header = (props) => {
             {inAboutPath && (
               <Nav.Link active onClick={handleOnClickHome}>
                 Home
+              </Nav.Link>
+            )}
+            {inSharedAboutPath && (
+              <Nav.Link active onClick={handleOnClickAboutSharedPage}>
+                Home
+              </Nav.Link>
+            )}
+            {inSharedHomePath && (
+              <Nav.Link active onClick={handleOnClickHomeSharedPage}>
+                About
               </Nav.Link>
             )}
             {(inHomePath || inAboutPath) && (

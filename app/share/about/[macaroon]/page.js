@@ -1,9 +1,9 @@
 import React from "react";
 import { redirect } from "next/navigation";
 
-import LandingPageWrapper from "../../../components/PageWrappers/LandingPageWrapper";
+import AboutPageWrapper from "../../../../components/PageWrappers/AboutPageWrapper";
 
-import { resourceService, userService } from "../../../services";
+import { userService } from "../../../../services";
 
 import _ from "lodash";
 
@@ -17,7 +17,7 @@ const getData = async (access_token, email) => {
 
   currentUserSS = {
     id: 0,
-    "email": email,
+    email: email,
   };
 
   const options = {
@@ -40,17 +40,14 @@ const getData = async (access_token, email) => {
     }
   }
 
-
-  let resourcesSS = await resourceService.getAll(options);
   let accessTokenSS = {
     value: access_token,
-    type: 'Bearer',
+    type: "Bearer",
     isShared: true,
   };
 
   return {
     currentUserSS: currentUserSS || {},
-    resourcesSS: resourcesSS || [],
     accessTokenSS: accessTokenSS || {},
   };
 };
@@ -59,15 +56,13 @@ const getData = async (access_token, email) => {
 // MAIN COMPONENT
 //******************************************************************************
 
-const LandingPageMacaroon = async ({ params, searchParams }) => {
+const AboutPageSharedMacaroon = async (props) => {
   //-----------------------------------
   // HOOKS & VARIABLES
   //-----------------------------------
 
-  const { macaroon } = params;
-  const { email } = searchParams;
-
-  const { resourcesSS, currentUserSS, accessTokenSS } = await getData(macaroon, email);
+  // Server Side Props
+  const { currentUserSS, accessTokenSS } = await getData();
 
   //------------------------------------------
   // JSX
@@ -75,8 +70,7 @@ const LandingPageMacaroon = async ({ params, searchParams }) => {
 
   return (
     <>
-      <LandingPageWrapper
-        resourcesSS={resourcesSS}
+      <AboutPageWrapper
         currentUserSS={currentUserSS}
         accessTokenSS={accessTokenSS}
       />
@@ -84,4 +78,4 @@ const LandingPageMacaroon = async ({ params, searchParams }) => {
   );
 };
 
-export default LandingPageMacaroon;
+export default AboutPageSharedMacaroon;

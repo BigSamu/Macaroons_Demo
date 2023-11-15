@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 import { Alert, Figure } from "react-bootstrap";
 
 import _ from "lodash";
@@ -76,6 +76,19 @@ const TokenDetailsList = (props) => {
               ? "Awesome!! You have unrestricted access to all pictures!!!"
               : "Oh no! You are being restricted in the access of the resources! Hope you can check at least one of the pictures"}
           </Figure.Caption>
+          <small>
+            <span className="button btn-link">
+              <Link
+                href={
+                  !accessToken?.isShared
+                    ? "/about"
+                    : `/share/about/${accessToken.value}`
+                }
+              >
+                Want to learn more about macaroons?
+              </Link>
+            </span>
+          </small>
         </Figure>
       </Alert>
     </>
